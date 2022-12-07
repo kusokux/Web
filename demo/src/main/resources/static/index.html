@@ -25,10 +25,41 @@
     </nav>
 </div>
 <div class="kong"></div>
-<div id="app">
-    {{message}}
+<div class="mid"><!--内容区-->
+    <div id="app">
+        {{message}}
+    </div>
+    <div class="main">
+        <div class="swiper" id="swiper"><!--轮播图-->
+            <a href="#"><img  @mouseover="changeInterval(true)"
+                              @mouseleave="changeInterval(false)"
+                              v-for="item in imgArr"
+                              :key="item.id"
+                              :src="item.url"
+                              alt="暂无图片"
+                              v-show="item.id===currentIndex"
+            ></a>
+            <!--左侧按钮-->
+            <div  @click="clickIcon('up')"   class="iconDiv icon-left">
+                <span class="icon-triangle-left"></span>
+            </div>
+            <!--右侧按钮-->
+            <div  @click="clickIcon('down')"  class="iconDiv icon-right">
+                <span class="icon-triangle-right"></span>
+            </div>
+            <!--控制圆点-->
+            <div class="banner-circle">
+                <ul>
+                    <li @click="changeImg(item.id)"
+                        v-for="(item) in imgArr"
+                        :key="item.id"
+                        :class="item.id=== currentIndex ? 'active': '' "
+                    ></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
-<Component></Component>
 <script src="index.js"></script>
 </body>
 </html>
