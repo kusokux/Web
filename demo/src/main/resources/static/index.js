@@ -15,16 +15,16 @@ const swiper =createApp({
             timer:null,//定时轮询
             imgArr:[
                 {	id:0,
-                    url:"1.png",
+                    url:"01.png",
                 },{
                     id:1,
-                    url:"2.png",
+                    url:"02.png",
                 },{
                     id:2,
-                    url:"3.png",
+                    url:"03.png",
                 },{
                     id:3,
-                    url:"2.png",
+                    url:"04.png",
                 },
             ]
         }
